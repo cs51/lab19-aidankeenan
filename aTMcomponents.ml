@@ -14,6 +14,9 @@ type action =
 ;; 
 
 
+type account_spec = {name : string; id : id; balance : int} ;;
+
+
 let initialize (initial : account_spec list) : unit =  initial
   |> List.iter (fun {name; id; balance}
                 -> DB.create id name;
